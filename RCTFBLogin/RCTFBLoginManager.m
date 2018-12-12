@@ -61,6 +61,10 @@ RCT_EXPORT_MODULE();
   return [[FBSDKAccessToken currentAccessToken] hasGranted:permission];
 }
 
++ (BOOL)requiresMainQueueSetup {
+  return YES;
+}
+
 - (NSArray *)getMissingPermissions:(NSArray *)expectedPermissions {
   FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
   NSMutableSet *missingPermissions = [NSMutableSet setWithArray:expectedPermissions];
